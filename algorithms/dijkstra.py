@@ -29,7 +29,8 @@ def DJS(grafo,s,f):
     cola=P_Queue()
     
     cola.add(value=s)
-    cola.update(s,distance=0,prev=First())
+    cola.update(s,distance=0,prev=First()) #como es el primero, y hay una parte(1er if despues del for) donde verficamos el prev,
+                                           #le ponemos como un prev, que tenga un valor cualquiera, y a ese si le ponemos en el prev un None
 
     while True:
           poped=cola.pop() #elimina del queue y devuelve objeto
@@ -40,7 +41,7 @@ def DJS(grafo,s,f):
 
           for i in actual.get_neighs():#recorremos los vecinos
         
-              if i.value==poped.prev.value:
+              if i.value==poped.prev.value: #si es igual al del que venia, no hacemos nada con ese
                  pass
 
               else:
